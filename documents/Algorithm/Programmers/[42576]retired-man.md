@@ -1,17 +1,25 @@
 # 42576번 문제 : 완주하지 못한 선수
 
 ## Question
-문제 설명<br>
+***
+### **문제 설명**
 수많은 마라톤 선수들이 마라톤에 참여하였습니다. 단 한 명의 선수를 제외하고는 모든 선수가 마라톤을 완주하였습니다.
 
 마라톤에 참여한 선수들의 이름이 담긴 배열 participant와 완주한 선수들의 이름이 담긴 배열 completion이 주어질 때, 완주하지 못한 선수의 이름을 return 하도록 solution 함수를 작성해주세요.
-
-제한사항<br>
+***
+### **제한사항**
 마라톤 경기에 참여한 선수의 수는 1명 이상 100,000명 이하입니다.
 completion의 길이는 participant의 길이보다 1 작습니다.
 참가자의 이름은 1개 이상 20개 이하의 알파벳 소문자로 이루어져 있습니다.
 참가자 중에는 동명이인이 있을 수 있습니다.
-
+***
+### **입출력 예**
+participant | completion | return
+|---|---|---|
+["leo", "kiki", "eden"] | ["eden", "kiki"] | "leo"
+["marina", "josipa", "nikola", "vinko", "filipa"]| ["josipa", "filipa", "marina", "nikola"] | "vinko"
+["mislav", "stanko", "mislav", "ana"]| 	["stanko", "ana", "mislav"] | "mislav"
+***
 ## My Solution
 * 1차 시도 (실패)
 ```Java
@@ -85,7 +93,7 @@ public String solution(String[] participant, String[] completion) {
         return answer;
     }
 ```
-
+***
 ## Most Liked Solution
 ```Java
 import java.util.HashMap;
@@ -110,7 +118,7 @@ class Solution {
 지금와서 드는 생각이지만 간단하게 숫자만 저장해도 되는걸 필요 이상의 데이터를 넣은것 같다는 생각이 든다. <br>
 getOrDefault 메소드는 이번에 처음 알게되었는데 key에 값이 없으면 설정한 default값을 반환하는 메소드이다.<br>
 SQL의 coalesce, 오라클 nvl과 같은 기능이라고 보면 될 것 같다.
-
+***
 ## Review
 1차 시도로 작성한 코드는 1, 2번 케이스까지는 처리가 가능했다. 하지만 동명이인의 종류가 2가지가 넘어가면 답을 낼수 없는 로직이었다.
 ```Java
@@ -124,7 +132,6 @@ SQL의 coalesce, 오라클 nvl과 같은 기능이라고 보면 될 것 같다.
 그리고 예전부터 문제를 똑바로 읽지않는 안좋은 버릇이 있었는데 다시 상기하는 기회가 되었다. <br>
 먼저 요구사항을 명확히하고 문제에 접근했다면 1차시도와같은 실수는 나오지 않았을텐데 주석으로 조건을 정리해놓고 문제에 접근하니 금방 결론에 도달할 수 있었다. <br>
 항상 요구사항 정리는 습관화 하도록 해야겠다.
-
-
+***
 ## Reference 
-프로그래머스 코딩테스트 연습- https://programmers.co.kr/learn/courses/30/lessons/42576
+* 프로그래머스 코딩테스트 연습- https://programmers.co.kr/learn/courses/30/lessons/42576
