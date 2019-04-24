@@ -20,6 +20,16 @@ participant | completion | return
 ["marina", "josipa", "nikola", "vinko", "filipa"]| ["josipa", "filipa", "marina", "nikola"] | "vinko"
 ["mislav", "stanko", "mislav", "ana"]| 	["stanko", "ana", "mislav"] | "mislav"
 <br><br>
+### **입출력 예 설명**
+예제 #1<br>
+leo는 참여자 명단에는 있지만, 완주자 명단에는 없기 때문에 완주하지 못했습니다.
+
+예제 #2<br>
+vinko는 참여자 명단에는 있지만, 완주자 명단에는 없기 때문에 완주하지 못했습니다.
+
+예제 #3<br>
+mislav는 참여자 명단에는 두 명이 있지만, 완주자 명단에는 한 명밖에 없기 때문에 한명은 완주하지 못했습니다.
+<br><br>
 ## My Solution
 * 1차 시도 (실패)
 ```Java
