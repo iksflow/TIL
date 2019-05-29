@@ -24,17 +24,52 @@
 문제의 input, output 을 대입했을때 결과 예시입니다.
 <br><br>
 ## My Solution
-내가 해결한 방법입니다.
+``` Java
+class Solution {
+	public static long solution(int a, int b) {
+		long answer = 0;
+		int big = 0;
+		int small = 0;
+		if (a == b) {
+			return a;
+		} else if (a > b) {
+			big = a;
+			small = b;
+		} else {
+			big = b;
+			small = a;
+		}
+		
+		for (int i=small; i<big; i++) {
+			answer += i;
+		}
+		return answer;
+	}
+}
+```
 <br><br>
 ## Most Liked Solution
-다른 사람들이 추천한 해결방법 또는 인상적인 해결방법을 적습니다.
+``` Java
+class Solution {
+
+    public long solution(int a, int b) {
+        return sumAtoB(Math.min(a, b), Math.max(b, a));
+    }
+
+    private long sumAtoB(long a, long b) {
+        return (b - a + 1) * (a + b) / 2;
+    }
+}
+```
+등차수열의 합을 구하는 공식으로 해결했다. <br>
+나도 분명 알고있던 내용인데... 코딩에 적용할때는 왜 생각이 안나는지...
 <br><br>
 ## Elapsed Time (HH:MM)
-내가 문제를 해결하는데 걸린 시간입니다.
+00:10
 **HH:MM**
 <br><br>
 ## Review
-나의 문제해결과정과 결과를 복기합니다.
+간단한 문제
 <br><br>
 ## Reference
-문제의 출처, 참고한 내용을 적습니다.
+프로그래머스 코딩테스트 연습 - https://programmers.co.kr/learn/courses/30/lessons/12912
