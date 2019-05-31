@@ -22,6 +22,7 @@
 <br><br>
 ### **입출력 예 설명**
 문제의 input, output 을 대입했을때 결과 예시입니다.
+
 <br><br>
 ## My Solution
 ``` Java
