@@ -41,7 +41,7 @@ class Solution {
 			small = a;
 		}
 		
-		for (int i=small; i<big; i++) {
+		for (int i = small; i < big; i++) {
 			answer += i;
 		}
 		return answer;
