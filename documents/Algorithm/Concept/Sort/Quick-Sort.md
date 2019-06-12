@@ -3,7 +3,7 @@
 ## Concept
 어떤 수의 집합을 오름차순으로 정렬한다고 가정했을 경우, pivot값을 기준으로 분할정복방식을 채택해 잘게 쪼개 정렬하는 알고리즘이다.
 ## Content
-재귀함수호출로 구현하는 알고리즘.
+재귀함수 호출로 구현하는 알고리즘.
 ## Summary
 시간복잡도는 O(N * log N) 이다. <br>
 ## Code
@@ -36,4 +36,4 @@ int main(void) {
 ## Question
 * Worst Case 찾아보기
 ## Reference
-* 나동빈님 유튜브 - https://www.youtube.com/watch?v=8ZiSzteFRYc&list=PLRx0vPvlEmdDHxCvAQS1_6XV4deOwfVrz&index=3
+* 나동빈님 유튜브 - https://www.youtube.com/watch?v=8ZiSzteFRYc&list=PLRx0vPvlEmdDHxCvAQS1_6XV4deOwfVrz&index=5
