@@ -64,5 +64,6 @@ int main(void) {
 재귀적인 방법에 개념이 약했는데.. 이후 나올 병합정렬에도 필요한 개념이니 이해하고 넘어가야겠다.
 ## Question
 * Worst Case 찾아보기
+이미 정렬이 모두 되어있는상황이라면 시간이 가장 오래걸린다.
 ## Reference
 * 나동빈님 유튜브 - https://www.youtube.com/watch?v=8ZiSzteFRYc&list=PLRx0vPvlEmdDHxCvAQS1_6XV4deOwfVrz&index=5
