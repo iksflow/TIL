@@ -5,3 +5,4 @@
 2. Sort-Merge-Join
 *
 3. Hash-Join
+* Build Table, Probe Table
