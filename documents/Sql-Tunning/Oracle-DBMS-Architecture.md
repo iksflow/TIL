@@ -13,7 +13,12 @@ Oracle DBMS는 크게 Instance와 Database로 구성된다.
 Instance와 Database는 다시 아래와 같이 분류된다.
 * Instance
   * SGA
+   * Shared Pool
+   * Data Buffer Cache
+   * Redo Log Buffer Cache
   * Background Processes
+   * User Process
+   * Server Process
 * Database
   * Data files
   * Control files
