@@ -1,4 +1,5 @@
 # Oracle DBMS 아키텍처
+![architecture](./image/Oracle_12c_Architecture_Large.png)
 ## 아키텍처 이해의 필요성
 DBMS는 데이터베이스를 관리하고 운영한다.  
 DBMS의 아키텍처의 구조, 구성요소, 동작 방식에 대한 이해가 바탕이 되어야만 데이터베이스의 성능 품질을 진단하고 이상현상을 통제할 수 있다.  
