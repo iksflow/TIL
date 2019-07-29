@@ -15,6 +15,6 @@
 ## Review
 자주 듣던 용어인데 지금에서야 정리를 해본다. 주요 로직외에 부가적으로 따라오는 작업들을 지칭한다 정도로 이해하면될것같다.
 
-#Reference
+## Reference
 * Wikipedia - https://ko.wikipedia.org/wiki/%EC%98%A4%EB%B2%84%ED%97%A4%EB%93%9C
 * Quora - https://www.quora.com/What-is-overhead-in-programming
