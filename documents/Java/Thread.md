@@ -6,7 +6,36 @@
 스레드(Thread): 애플리케이션 내부의 하나의 실행 흐름을 의미한다.
 
 ## 멀티태스킹
+## 스레드의 생성
+스레드를 생성하는 방법에는 2가지가 있다.  
 
+첫번째는, Thread 클래스를 상속받은 클래스를 생성해서 사용하는 방법이다.  
+실행할 코드는 Thread 클래스의 run메소드를 오버라이딩 하고 안에 작성한다.  
+인스턴스를 생성하고 start메소드를 통해 run의 코드를 실행한다.  
+
+``` Java
+// ThreadA.class
+public class ThreadA extends Thread{
+
+	@Override
+	public void run() {
+		System.out.println("I am threadA");
+	}
+	
+}
+
+// main
+public class ThreadAMain {
+
+	public static void main(String[] args) {
+		ThreadA threadA = new ThreadA();
+		threadA.start();
+	}
+
+}
+// result
+// I am threadA
+```
 ## 동기화
 동기화는 자원의 공유로인해 스레드간에 로직이 꼬이는걸 방지하기 위해 사용한다.  
 
