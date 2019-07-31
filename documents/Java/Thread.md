@@ -9,7 +9,50 @@
 ## 스레드의 생성
 스레드를 생성하는 방법에는 2가지가 있다.  
 
-첫번째는, Thread 클래스를 상속받은 클래스를 생성해서 사용하는 방법이다.  
+첫번째 방법은 Thread 클래스의 생성자를 통해 생성하는 방법이다.  
+Thread 클래스의 생성자는 Runnable인터페이스를 구현한 객체를 매개변수로 받을 수 있는데, Runnable을 구현객체의 run메소드에 스레드가 실행할 코드가 담을 수 있기 때문이다.  
+Runnable 매개변수를 전달하지 않더라도 Thread 인스턴스 생성에 문제될 것은 없지만, 실행할 코드가 빠진 모양이 되어버리기 때문에 의미가 없다.  
+Runnable 매개변수를 전달하는 방법에는 3가지 방법을 활용할 수 있다. 
+앞서 소개한 Runnable 클래스를 활용한 방법과 익명객체를 전달하는 방법 그리고 람다식을 활용해 함수형 표현으로 사용하는 방법이 있다.  
+아래 코드를 보면 이해가 쉬울것이다.
+``` Java
+// Task.class
+public class Task implements Runnable{
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		System.out.println("I am an instance of Task that implements Runnable Interface.");
+		
+	}
+
+}
+
+// main
+public class RunnableMain {
+
+	public static void main(String[] args) {
+		Thread threadOne = new Thread(new Task());
+		Thread threadTwo = new Thread(new Runnable() {
+			public void run() {
+				System.out.println("I am anonymous instance.");
+			}
+		});
+		Thread threadThree = new Thread(()->{
+			System.out.println("using lamda expression.");
+		}); 
+		
+		threadOne.start();
+		threadTwo.start();
+		threadThree.start();
+	}
+
+}
+
+
+```
+
+두번째 방법은 Thread 클래스를 상속받은 클래스를 생성해서 사용하는 방법이다.  
 실행할 코드는 Thread 클래스의 run메소드를 오버라이딩 하고 안에 작성한다.  
 인스턴스를 생성하고 start메소드를 통해 run의 코드를 실행한다.  
 
@@ -28,8 +71,8 @@ public class ThreadA extends Thread{
 public class ThreadAMain {
 
 	public static void main(String[] args) {
-		ThreadA threadA = new ThreadA();
-		threadA.start();
+		ThreadA thread = new ThreadA();
+		thread.start();
 	}
 
 }
