@@ -6,6 +6,8 @@
 스레드(Thread): 애플리케이션 내부의 하나의 실행 흐름을 의미한다.
 
 ### 1.1. 멀티태스킹
+
+
 ## 2. 스레드의 생성
 스레드를 생성하는 방법에는 2가지가 있다.  
 ### 2.1. Thread 클래스로 직접 생성
@@ -92,6 +94,7 @@ public class RunnableMain {
 using lamda expression.
 ```
 
+### 2.2. Thread 클래스로 직접 생성
 두번째 방법은 Thread 클래스를 상속받은 클래스를 생성해서 사용하는 방법이다.  
 실행할 코드는 Thread 클래스의 run메소드를 오버라이딩 하고 안에 작성한다.  
 인스턴스를 생성하고 start메소드를 통해 run의 코드를 실행한다.  
@@ -119,6 +122,57 @@ public class ThreadAMain {
 // result
 // I am threadA
 ```
+### 2.3. Thread의 이름 설정하기(setName, getName)
+Thread가 여러개 생기다보면 어떤 스레드가 실행중인지 확인하고 싶을 때가 있다.  
+이런 경우 디폴트로 생성해주는 스레드 넘버링 이름을 그대로 사용한다면, 참 피곤한 일이 여럿 발생할지도 모른다.  
+setName을 사용하면 내가 스레드에 이름을 설정할 수 있고, getName을 활용하면 내가 설정한 이름을 불러올 수 있다.  
+스레드가 작업하는 내용에 따라 네이밍을 직관적으로 해둔다면 유용할 것으로 생각한다.  
+아래 코드처럼 익명객체로 Thread를 구현하는 경우 자기 객체를 this를 통해 참조할 수 없다.  
+이런 경우에는 Thread의 정적 메소드인 currentThread()를 통해 현재 실행되는 Thread를 참조할 수 있다.
+``` Java
+
+public class RunnableMain {
+
+	public static void main(String[] args) {
+		Thread BeepThread = new Thread(new Runnable() {
+			public void run() {
+				for(int i=0; i<5; i++) {
+					System.out.printf("%s Compelete\n", Thread.currentThread().getName());		
+					try {
+						Thread.sleep(500);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		});
+		Thread BellThread = new Thread(new Runnable() {
+			public void run() {
+				
+				for(int i=0; i<5; i++) {
+					System.out.printf("%s Compelete\n", Thread.currentThread().getName());	
+					try {
+						Thread.sleep(500);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}				
+				
+			}
+		});
+		BeepThread.setName("Beeper");
+		BellThread.setName("Bell");
+		
+		BeepThread.start();
+		BellThread.start();
+	}
+
+}
+```
+### 2.4. start() 와 run() 의 차이
+
+
+
 ## 동기화
 동기화는 자원의 공유로인해 스레드간에 로직이 꼬이는걸 방지하기 위해 사용한다.  
 
