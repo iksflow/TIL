@@ -175,6 +175,8 @@ public class RunnableMain {
 
 ## 동기화
 동기화는 자원의 공유로인해 스레드간에 로직이 꼬이는걸 방지하기 위해 사용한다.  
+자원의 공유를 제어하고 필요한 연산이 끝날때 까지 하나의 스레드가 사용하게끔 묶어둔다.  
+synchronized 키워드를 이용해서 동기화 블록, 메소드를 설정할 수 있다.
 
 ``` Java
 public class StudyMain {
