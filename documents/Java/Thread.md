@@ -218,13 +218,55 @@ running thread name::Thread One
 자바의 스레드 스케줄링은 우선순위(Priority) 방식과 순환 할당(Round-Robin) 방식을 사용한다.  
 우선순위 방식은 더 높은 우선순위를 가진 스레드가 많이 실행되도록 계획하는 방식이다.  
 순환 할당 방식은 시간 할당량을 정해서 하나의 스레드를 정해진 시간만큼 실행하고 다시 다른 스레드를 실행하는 방식이다.  
-
+순환 할당 방식은 자바 가상머신에 의해 제어되기 때문에 코드로 제어하는것이 불가능하다. 
 그렇다면 특정 스레드를 더 우선적으로 처리하고 싶을때는 어떻게 해야할까?  
-스레드의 우선순위를 
+바로 setPriority() 를 통해 스레드의 우선순위를 정해주면 된다.
 
-스레드의 우선순위는 스레드의 실행 빈도를 정하는데 사용된다.  
-우선순위를 정하는 
+``` Java
+public class LoopThread extends Thread{
+	
+	public LoopThread(String name) {
+		this.setName(name);
+	}
+	public void run() {
+		for (int i = 0; i < 2000000000; i++) {
+		}
+		System.out.println(Thread.currentThread().getName());
+	}
+}
 
+
+public class SetPriorityExam {
+
+	public static void main(String[] args) {
+		
+		for (int i = 1; i < 10; i++) {
+			Thread thread = new LoopThread("Thread" + i);
+			if (i == 9) {
+				thread.setPriority(Thread.MAX_PRIORITY);
+			} else {
+				thread.setPriority(Thread.MIN_PRIORITY);
+			}
+			thread.start();
+		}
+	}
+
+}
+
+```
+```
+<Result>
+Thread9
+Thread2
+Thread1
+Thread3
+Thread4
+Thread5
+Thread6
+Thread8
+Thread7
+```
+9번 스레드에게 MAX_PRIORITY를 주고 나머지에게는 MIN_PRIORITY를 준 다음 실행한 결과, Thread 9의 실행이 가장 먼저 끝난것을 알 수 있다.
 
 ## 동기화
 동기화는 자원의 공유로인해 스레드간에 로직이 꼬이는걸 방지하기 위해 사용한다.  
