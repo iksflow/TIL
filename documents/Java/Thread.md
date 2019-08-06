@@ -170,8 +170,40 @@ public class RunnableMain {
 }
 ```
 ### 2.4. start() 와 run() 의 차이
+start()는 Thread의 메소드이고 run()을 실행하는 역할을 한다.  
+run()의 경우 Runnable의 메소드이다.  
+너무 당연한 소리같지만 두가지는 차이점이 존재한다.  
+우선 동일한 부분은 start(), run() 모두 run() 내부에 정의된 코드를 실행한다는 부분이다.  
+다른 부분은 실행하는 주체인 스레드가 차이가 있다는것이다.  
+run()을 직접 호출하게되면 실행 주체는 main스레드가 되고, start()를 통해 호출하는 방식은 실행 주체가 정의 start()를 호출하는 스레드가 된다.
+아래 예제 코드를 보자.
+``` Java
+public class RunnableExam implements Runnable{
+	public void run() {
+		// 실행중인 스레드의 이름을 출력한다.
+		System.out.println("running thread name::" + Thread.currentThread().getName());
+	}
+}
 
+public class DiffOfStartAndRunExample {
 
+	public static void main(String[] args) {
+		RunnableExam runExam = new RunnableExam();
+		Thread thread1 = new Thread(runExam);
+		thread1.setName("Thread One");
+		
+		thread1.start();
+		thread1.run();
+	}
+
+}
+```
+```
+<result>
+running thread name::main
+running thread name::Thread One
+```
+결과에서 확인할 수 있듯이, 서로 실행하는 주체가 다르다.
 
 ## 동기화
 동기화는 자원의 공유로인해 스레드간에 로직이 꼬이는걸 방지하기 위해 사용한다.  
