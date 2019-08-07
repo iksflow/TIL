@@ -292,3 +292,7 @@ public class StudyMain {
 }
 
 ```
+## 스레드의 실행상태
+* notify 
+* notifyall
+* yield
