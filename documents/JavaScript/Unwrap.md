@@ -8,10 +8,10 @@
       <span id="target"></span>
     <div>
   </body>
+  <script>
+    $('#target').unwrap();
+  </script>
 </html>
-<script>
-  $('#target').unwrap();
-</script>
 ```
 * result
 ``` HTML
@@ -19,10 +19,38 @@
   <body>
     <span id="target"></span>
   </body>
+  <script>
+    $('#target').unwrap();
+  </script>
 </html>
-<script>
-  $('#target').unwrap();
-</script>
 ```
 
 # Contents
+contents() 를 활용하면 자식요소는 남겨두고 타겟만 삭제할 수 있다.  
+
+* example
+``` HTML
+<html>
+  <body>
+    <div>
+      <span id="target">
+        <span>Child</span>
+      </span>
+    <div>
+  </body>
+  <script>
+    $('#target').unwrap();
+  </script>
+</html>
+```
+* result
+``` HTML
+<html>
+  <body>
+    <span>Child</span>
+  </body>
+  <script>
+    $('#target').unwrap();
+  </script>
+</html>
+```
