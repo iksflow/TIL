@@ -296,6 +296,7 @@ public class StudyMain {
 ```
 ## 스레드의 실행상태
 * notify 
+스레드를 실행대기상태로 만든다
 * notifyall
 * yield
 ### 데몬(Daemon)이란?
