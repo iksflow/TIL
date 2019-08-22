@@ -73,3 +73,18 @@ public class GenericPracticeMain {
 public class 클래스명<T> { ... }
 public interface 클래스명<T> { ... }
 ```
+	
+## 3. 제네릭 메소드
+<제네릭타입 파라미터> 리턴타입 메소드명(파라미터) 의 규칙으로 생성한다.  
+제네릭타입을 파라미터로 사용하려면 앞의 제네릭타입 파라미터 정의부분(public 바로 뒤)에 사용하려는 제네릭타입이 정의되어 있어야 한다.  
+```
+public class Util {
+	public <T, Q> BoxUsingGeneric<T> boxing(T t, Q q, String type) {
+		BoxUsingGeneric<T> box = new BoxUsingGeneric<T>();
+		BoxUsingGeneric<Q> box2 = new BoxUsingGeneric<Q>();
+		box.setItem(t);
+		return box;
+	}
+}
+
+```
