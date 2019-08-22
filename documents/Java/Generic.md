@@ -5,7 +5,7 @@
 * 컴파일 시 강한 타입체크를 할 수 있다.
 * 타입 변환을 할 필요가 없다.
 
-### Non Generic 클래스
+### Non-Generic 클래스
 제네릭 타입을 사용하지 않는 경우 아래 예시처럼 형변환을 계속해서 해줘야 하는 문제가 있다. (set: Integer -> Object, get: Object -> Integer)  
 ``` Java
 // Generic 미사용
