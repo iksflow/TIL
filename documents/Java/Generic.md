@@ -8,7 +8,7 @@
 ### Non-Generic 클래스
 제네릭 타입을 사용하지 않는 경우 아래 예시처럼 형변환을 계속해서 해줘야 하는 문제가 있다. (set: Integer -> Object, get: Object -> Integer)  
 ``` Java
-// Generic 미사용
+// Box.java
 public class Box {
   private Object item;
 
@@ -21,6 +21,7 @@ public class Box {
 	}
 }
 
+// GenericPracticeMain.java
 public class GenericPracticeMain {
 
 	public static void main(String[] args) {
@@ -34,9 +35,11 @@ public class GenericPracticeMain {
 
 }
 ```
+
 ### Generic 클래스
 형변환을 안하게 되니 코드가 훨씬 간결해졌다.
 ``` Java
+// BoxUsingGeneric.java
 public class BoxUsingGeneric<T> {
 	private T item;
 
@@ -48,6 +51,8 @@ public class BoxUsingGeneric<T> {
 		this.item = item;
 	}
 }
+
+// GenericPracticeMain.java
 public class GenericPracticeMain {
 
 	public static void main(String[] args) {
