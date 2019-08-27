@@ -11,7 +11,11 @@ let text = 'apple';
 console.log(`this is ${text}`);
 // this is apple
 ```
-
+## 조건문
+``` js
+`${(text === 'apple') ? 'fruit' : 'not fruit'}` 
+```
+3항 연산자를 사용해 조건식을 쓸 수 있다.
 ## Summary
 
 ## Review
