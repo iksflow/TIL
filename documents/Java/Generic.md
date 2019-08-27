@@ -88,3 +88,17 @@ public class Util {
 }
 
 ```
+## 4. 타입파라미터 제한하기
+타입 파라미터를 사용할 때, 특정한 속성의 데이터만 받아야 하는 경우가 있다.  
+예를 들면 Integer, Double등의 숫자값만 처리하는 메소드로 만들고 싶은 경우 String은 제한해야한다.  
+이런 경우 타입파라미터를 제한할 수 있다.  
+```
+public <T extends 상위타입> 리턴타입 메소드(매개변수, ...) { ... }
+
+e.g.) public <T extends Number> int compare(T t1, T t2) { ... }
+```
+위와 같이 사용 하면 되고, compare 같은 경우 compare("a", "b") 처럼 사용하면 syntax error가 발생한다.  
+
+extends를 사용해서 입력받을 타입파라미터를 제한하는 경우 제약이 걸린다.  
+위의 경우 Number를 상위타입으로 지정했기 때문에, Number 클래스에 존재하는 메소드와 멤버변수에만 접근이 가능하다.  
+Integer에만 존재하는 compareTo같은 메소드는 호출할 수 없다.
