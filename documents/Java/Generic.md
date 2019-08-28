@@ -77,7 +77,7 @@ public interface 클래스명<T> { ... }
 ## 3. 제네릭 메소드
 <제네릭타입 파라미터> 리턴타입 메소드명(파라미터) 의 규칙으로 생성한다.  
 제네릭타입을 파라미터로 사용하려면 앞의 제네릭타입 파라미터 정의부분(public 바로 뒤)에 사용하려는 제네릭타입이 정의되어 있어야 한다.  
-```
+``` Java
 public class Util {
 	public <T, Q> BoxUsingGeneric<T> boxing(T t, Q q, String type) {
 		BoxUsingGeneric<T> box = new BoxUsingGeneric<T>();
@@ -93,7 +93,7 @@ public class Util {
 예를 들면 Integer, Double등의 숫자값만 처리하는 메소드로 만들고 싶은 경우 String은 제한해야한다.  
 이런 경우 extends 키워드를 통해 타입파라미터를 제한할 수 있다.  
 상위 클래스, 인터페이스 모두 가능하다.
-```
+``` Java
 public <T extends 상위타입> 리턴타입 메소드(매개변수, ...) { ... }
 
 e.g.) public <T extends Number> int compare(T t1, T t2) { ... }
@@ -111,4 +111,6 @@ extends, super를 사용하는 경우에는 뒤의 타입을 기준으로 제한
 extends를 사용하는 경우 기준타입 또는 기준타입을 상속하는 하위 클래스만 허용한다.  
 super를 사용하는 경우 기준타입 또는 기준타입의 상위 클래스만 허용한다.  
 
-
+``` Java
+예시코드 삽입
+```
