@@ -114,3 +114,92 @@ super를 사용하는 경우 기준타입 또는 기준타입의 상위 클래�
 ``` Java
 예시코드 삽입
 ```
+## 6. 제네릭 타입의 상속과 구현
+
+제네릭 타입도 상위클래스가 될 수 있다.  
+다만, 상속하는 클래스를 명시할 때, 상위클래스의 제네릭 타입을 같이 명시해 줘야 한다.  
+명시하지 않더라도 하위클래스 생성에는 문제가 없지만, 값을 할당하려고 할 때 멤버변수의 타입이 정해지지 않은 상태이므로 전부 Object 타입으로 받아버리게 된다.  
+그래서 타입안전성 관련한 경고문구가 계속해서 나오게 되고, 값을 저장할 때, 형변환을 해줘야 해서 제네릭을 사용하는 의미가 없어지고, 좋지 않은 코드가 되어버린다.  
+* 올바르지 못한 사용법
+``` Java
+public class Product<T, M> {
+	
+	private T kind;
+	private M model;
+	private ArrayList<T> kindList; 
+	
+	public T getKind() {
+		return kind;
+	}
+	public void setKind(T kind) {
+		this.kind = kind;
+	}
+	public M getModel() {
+		return model;
+	}
+	public void setModel(M model) {
+		this.model = model;
+	}
+	public ArrayList<T> getKindList() {
+		return kindList;
+	}
+	public void setKindList(ArrayList<T> kindList) {
+		this.kindList = kindList;
+	}
+}
+
+public class ChildProduct extends Product{
+
+}
+
+public class ProductExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ChildProduct cp = new ChildProduct();
+		int a = 123;
+		double b = 1.56;
+		cp.setKindList(new ArrayList<Integer>());
+		cp.getKindList().add(a);
+		cp.getKindList().add(b);
+		Integer temp1 = (Integer)cp.getKindList().get(0);
+		Double temp2 = (Double)cp.getKindList().get(1);
+	}
+}
+```
+
+* 올바른 상속 예시
+``` Java
+public class Product<T, M> {
+	
+	private T kind;
+	private M model;
+	
+	public T getKind() {
+		return kind;
+	}
+	public void setKind(T kind) {
+		this.kind = kind;
+	}
+	public M getModel() {
+		return model;
+	}
+	public void setModel(M model) {
+		this.model = model;
+	}
+}
+```
+``` Java
+public class ChildProduct<T, M, C> extends Product<T, M>{
+	private C company;
+
+	public C getCompany() {
+		return company;
+	}
+
+	public void setCompany(C company) {
+		this.company = company;
+	}
+}
+```
+
