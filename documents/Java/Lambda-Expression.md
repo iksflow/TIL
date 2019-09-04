@@ -30,14 +30,16 @@ Runnable runnable = () -> { System.out.println("Hello Lambda"};
 ``` Java
 public interface MyNormalInterface {
 	public int sum(int x, int y);
-  // public int minus(int x, int y);  추가로 메소드를 정의해도 컴파일 에러가 나지 않는다. 그러나 람다식 정의부분에서 컴파일 에러가 발생한다.
+	// 추가로 메소드를 정의해도 컴파일 에러가 나지 않는다. 그러나 람다식 정의부분에서 컴파일 에러가 발생한다.
+  	// public int minus(int x, int y);  
 }
 ```
 ``` Java
 @FunctionalInterface
 public interface MyFunctionalInterface {
 	public int sum(int x, int y);
-  // public int minus(int x, int y);  추가로 메소드를 정의하게되면, 이 메소드는 함수형 인터페이스가 아니다 라는 컴파일 에러가 발생한다.
+	// 추가로 메소드를 정의하게되면, 이 메소드는 함수형 인터페이스가 아니다 라는 컴파일 에러가 발생한다.
+  	// public int minus(int x, int y);  
 }
 ```
 ``` Java
