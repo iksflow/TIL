@@ -68,7 +68,7 @@ Functional:: 4
 | Supplier | X | O | |
 | Function | O | O | 주로 매개값을 리턴값으로 매핑 |
 | Operator | O | O | 주로 매개값을 연산해서 리턴 |
-| Predicate | O |  | 리턴값이 boolean이고, 매개값을 조사해서 true/false를 리턴 |
+| Predicate | O | boolean | 매개값을 조사해서 true/false를 리턴 |
 
 ## 4. 람다식 메소드
 * forEach
