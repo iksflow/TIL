@@ -70,6 +70,8 @@ Functional:: 4
 | Operator | O | O | 주로 매개값을 연산해서 리턴 |
 | Predicate | O | boolean | 매개값을 조사해서 true/false를 리턴 |
 
+각각의 종류별로 리턴타입을 정하는메소드가 여러개있다.
+
 ## 4. 람다식 메소드
 * forEach
 ``` Java
