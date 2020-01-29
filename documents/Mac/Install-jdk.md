@@ -5,4 +5,4 @@ brew cask info java
 brew cask install java
 
 ### Reference
-기억보단 기록을 - https://jojoldu.tistory.com/329
+이동욱님 블로그 - https://jojoldu.tistory.com/329
