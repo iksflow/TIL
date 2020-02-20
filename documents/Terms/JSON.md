@@ -1,4 +1,4 @@
 ### JSON(JavaScript Object Notation)
 
 #### Reference
-TCP School - http://tcpschool.com/json/json_basic_structure
+W3school - https://www.w3schools.com/js/js_json_syntax.asp
